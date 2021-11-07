@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
+import 'package:flutter_timer_lecture/src/provider/provider_timer_page.dart';
 import 'bloc_widget/bloc_timer_page.dart';
 import 'getx_widget/getx_timer_page.dart';
 import 'stateful_widget/state_timer_page.dart';
@@ -56,6 +56,8 @@ class _MyHomePageState extends State<MyHomePage> {
         return const BLoCTimerPage(waitTimeInSec: waitTime);
       case 2:
         return GetXTimerPage(waitTimeInSec: waitTime);
+      case 3:
+        return ProviderTimerPage(waitTimeInSec: waitTime);
       default:
         throw ArgumentError();
     }
@@ -85,6 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
               icon: Icon(Icons.youtube_searched_for), label: 'Stateful'),
           BottomNavigationBarItem(icon: Icon(Icons.tab_rounded), label: 'BLoC'),
           BottomNavigationBarItem(icon: Icon(Icons.chair), label: 'GetX'),
+          BottomNavigationBarItem(icon: Icon(Icons.three_k_plus_outlined), label: 'Provider'),
         ],
       ),
     );
